@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Optional, TypeVar
+from typing import Literal, Optional, TypeVar
 
 
 class OperationT(Enum):
@@ -28,3 +28,6 @@ class OperationT(Enum):
 
 T = TypeVar("T")
 Nullable = Optional[T]
+
+
+ArgNumT = Literal["First", "Second"]

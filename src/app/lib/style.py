@@ -24,7 +24,7 @@ class StyleCLI:
 
     @classmethod
     def num_choices(cls: type["StyleCLI"]) -> None:
-        print("\n")
+        print("\t")
 
         side: str = "-" * 3
         print(f"{side} Enter your numbers {side}")

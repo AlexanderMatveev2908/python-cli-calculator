@@ -1,5 +1,5 @@
 from app.lib.error import ErrApp
-from app.lib.types import OperationT
+from app.lib.types import ArgNumT, OperationT
 
 
 class Collector:
@@ -17,3 +17,14 @@ class Collector:
 
             except Exception:
                 ErrApp.err_log("☢️ Enter a valid integer.")
+
+    @classmethod
+    def num_choice(cls: type["Collector"], arg: ArgNumT) -> float:
+        while True:
+            try:
+                ch: str = input(f"{arg} number: ").strip()
+                num: float = float(ch)
+
+                return num
+            except Exception as err:
+                ErrApp.err_log("Enter a valid integer/float number")

@@ -5,5 +5,5 @@ from app.lib.types import Nullable, OperationT
 @dataclass
 class Ctx:
     op: OperationT
-    arg_a: Nullable[float] = None
-    arg_b: Nullable[float] = None
+    arg_a: float
+    arg_b: float
