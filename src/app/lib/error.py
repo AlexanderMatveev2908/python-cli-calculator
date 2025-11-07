@@ -1,0 +1,31 @@
+import json
+
+from app.lib.types import Nullable
+
+
+class ErrApp(Exception):
+    msg: str
+    code: int
+
+    def __init__(self: "ErrApp", msg: str, code: Nullable[int] = None) -> None:
+        super().__init__(msg)
+        self.msg = f"❌ {msg}"
+        self.code = code or 500
+
+    @classmethod
+    def err_log(cls: type["ErrApp"], msg: str) -> None:
+        print(f"❌ {msg}")
+
+    @classmethod
+    def err_ex(cls: type["ErrApp"], msg: str) -> None:
+        cls.err_log(msg)
+        exit(1)
+
+    def __str__(self: "ErrApp") -> str:
+        return json.dumps(self.__dict__, indent=2, ensure_ascii=False)
+
+    def __eq__(self: "ErrApp", other: object) -> bool:
+        if not isinstance(other, ErrApp):
+            return NotImplemented
+
+        return self.__dict__ == other.__dict__
