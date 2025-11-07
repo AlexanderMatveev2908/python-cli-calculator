@@ -1,5 +1,6 @@
-from app.lib.error import ErrApp
-from app.lib.types import ArgNumT, OperationT
+from app.lib.dev.error import ErrApp
+from app.lib.paperwork.op import OperationT
+from app.lib.paperwork.types import ArgNumT
 
 
 class Collector:

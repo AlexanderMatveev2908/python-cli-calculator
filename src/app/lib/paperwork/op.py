@@ -1,5 +1,6 @@
 from enum import Enum
-from typing import Literal, Optional, TypeVar
+
+from app.lib.dev.error import ErrApp
 
 
 class OperationT(Enum):
@@ -23,11 +24,4 @@ class OperationT(Enum):
             case 5:
                 return cls.ex
             case _:
-                raise Exception("❌ invalid choice")
-
-
-T = TypeVar("T")
-Nullable = Optional[T]
-
-
-ArgNumT = Literal["First", "Second"]
+                raise ErrApp("invalid choice")

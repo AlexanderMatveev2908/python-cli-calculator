@@ -1,4 +1,4 @@
-from app.lib.types import OperationT
+from app.lib.paperwork.op import OperationT
 
 
 class Manager:

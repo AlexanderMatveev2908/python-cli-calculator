@@ -1,5 +1,6 @@
 from dataclasses import dataclass
-from app.lib.types import Nullable, OperationT
+
+from app.lib.paperwork.op import OperationT
 
 
 @dataclass

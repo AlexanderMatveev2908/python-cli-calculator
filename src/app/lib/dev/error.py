@@ -1,7 +1,7 @@
 import json
 
-from app.lib.reg import Reg
-from app.lib.types import Nullable
+from app.lib.paperwork.reg import Reg
+from app.lib.paperwork.types import Nullable
 
 
 class ErrApp(Exception):

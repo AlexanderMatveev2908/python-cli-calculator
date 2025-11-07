@@ -1,8 +1,8 @@
 from app.lib.collector import Collector
-from app.lib.context import Ctx
+from app.lib.paperwork.context import Ctx
 from app.lib.manager import Manager
+from app.lib.paperwork.op import OperationT
 from app.lib.style import StyleCLI
-from app.lib.types import OperationT
 
 
 def main() -> None:
@@ -17,6 +17,8 @@ def main() -> None:
     arg_b: float = Collector.num_choice("Second")
 
     ctx: Ctx = Ctx(op, arg_a, arg_b)
+
+    StyleCLI.result(ctx)
 
 
 if __name__ == "__main__":
