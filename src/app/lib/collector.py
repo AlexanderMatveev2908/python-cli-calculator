@@ -15,4 +15,4 @@ class Collector:
                     ErrApp.err_log("Invalid choice. Enter a number between 1 and 5.")
 
             except Exception:
-                ErrApp.err_log("Enter a valid integer.")
+                ErrApp.err_log("☢️ Enter a valid integer.")

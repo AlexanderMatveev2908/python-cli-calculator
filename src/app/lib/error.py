@@ -1,5 +1,6 @@
 import json
 
+from app.lib.reg import Reg
 from app.lib.types import Nullable
 
 
@@ -14,7 +15,9 @@ class ErrApp(Exception):
 
     @classmethod
     def err_log(cls: type["ErrApp"], msg: str) -> None:
-        print(f"❌ {msg}")
+        emj: str = "" if Reg.starts_with_emj(msg) else "❌ "
+
+        print(f"{emj}{msg}")
 
     @classmethod
     def err_ex(cls: type["ErrApp"], msg: str) -> None:
