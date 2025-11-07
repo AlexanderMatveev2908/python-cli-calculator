@@ -1,6 +1,7 @@
+from typing import cast
 from app.lib.dev.error import ErrApp
 from app.lib.paperwork.op import OperationT
-from app.lib.paperwork.types import ArgNumT
+from app.lib.paperwork.types import ArgNumT, CalcAgainResT
 
 
 class Collector:
@@ -27,5 +28,27 @@ class Collector:
                 num: float = float(ch)
 
                 return num
-            except Exception as err:
+            except Exception:
                 ErrApp.err_log("Enter a valid integer/float number")
+
+    @classmethod
+    def again(cls: type["Collector"]) -> CalcAgainResT:
+
+        msg_err: str = (
+            "Please enter y if you want to calculate again or n if you want to exit"
+        )
+
+        while True:
+            try:
+                print("\t")
+
+                res: str = input("Do you want to calculate again? ").strip().lower()
+
+                allowed: list[CalcAgainResT] = ["y", "n"]
+                if res in allowed:
+                    return cast(CalcAgainResT, res)
+                else:
+                    ErrApp.err_log(msg_err)
+
+            except Exception:
+                ErrApp.err_log(msg_err)

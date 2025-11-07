@@ -2,6 +2,7 @@ from app.lib.collector import Collector
 from app.lib.paperwork.context import Ctx
 from app.lib.manager import Manager
 from app.lib.paperwork.op import OperationT
+from app.lib.paperwork.types import CalcAgainResT
 from app.lib.style import StyleCLI
 
 
@@ -19,6 +20,14 @@ def main() -> None:
     ctx: Ctx = Ctx(op, arg_a, arg_b)
 
     StyleCLI.result(ctx)
+
+    calc_again: CalcAgainResT = Collector.again()
+
+    if calc_again == "y":
+        print("\n")
+        main()
+    else:
+        Manager.bye()
 
 
 if __name__ == "__main__":
