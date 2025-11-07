@@ -1,0 +1,52 @@
+# ? python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.eggs/
+.Python
+env/
+.venv/
+venv/
+pip-wheel-metadata/
+
+# ? keep .vscode because it have useful settings for python formatting
+# ? keep cheat_sheet because can be useful as reminder for some concepts 
+
+# ? pytest
+htmlcov/
+.cache/
+.tox/
+.coverage
+.coverage.*
+.pytest_cache/
+nosetests.xml
+test-results.xml
+.pytest_cache/
+
+# ? mypy / ruff / linting
+.mypy_cache/
+.dmypy.json
+ruff_cache/
+*.lint
+*.typecheck
+
+# ? build apps
+dist/
+build/
+
+# ? secrets
+*.pem
+*.key
+*.crt
+.env
+.env.*
+certs/
+kind-secrets.yml
+
+# ? assets
+uploads/
+assets/
