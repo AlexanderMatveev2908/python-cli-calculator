@@ -7,8 +7,10 @@ from app.lib.types import OperationT
 def main() -> None:
     StyleCLI.intro()
 
-    ch: OperationT = Collector.get_operation()
-    Manager.bye_if_bored(ch)
+    op: OperationT = Collector.get_operation()
+    Manager.bye_if_bored(op)
+
+    StyleCLI.num_choices()
 
 
 if __name__ == "__main__":

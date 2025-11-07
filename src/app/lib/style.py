@@ -21,3 +21,10 @@ class StyleCLI:
     def intro(cls: type["StyleCLI"]) -> None:
         cls.__title()
         cls.__menu_intro()
+
+    @classmethod
+    def num_choices(cls: type["StyleCLI"]) -> None:
+        print("\n")
+
+        side: str = "-" * 3
+        print(f"{side} Enter your numbers {side}")

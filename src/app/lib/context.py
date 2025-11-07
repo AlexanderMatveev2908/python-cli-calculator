@@ -1,9 +1,9 @@
 from dataclasses import dataclass
-from app.lib.types import OperationT
+from app.lib.types import Nullable, OperationT
 
 
 @dataclass
 class Ctx:
     op: OperationT
-    arg_a: int
-    arg_b: int
+    arg_a: Nullable[float] = None
+    arg_b: Nullable[float] = None

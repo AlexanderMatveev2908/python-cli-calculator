@@ -9,5 +9,27 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "python.envFile": "${workspaceFolder}/.env"
+  "python.envFile": "${workspaceFolder}/.env",
+  "better-comments.tags": [
+    {
+      "tag": "?",
+      "color": "#2563EB",
+      "bold": true
+    },
+    {
+      "tag": "!",
+      "color": "#DC2626",
+      "bold": true
+    },
+    {
+      "tag": "|",
+      "color": "#CA8A04",
+      "bold": true
+    },
+    {
+      "tag": ">",
+      "color": "#16A34A",
+      "bold": true
+    }
+  ]
 }
